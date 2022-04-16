@@ -1,8 +1,5 @@
 .card {
-  --measure: 30ch;
   display: grid;
 
-  .content {
-    box-sizing: content-box;
-  }
+  width: 20rem;
 }

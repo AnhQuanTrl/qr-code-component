@@ -1,7 +1,6 @@
 @use "sass:list";
 
 :root {
-  --measure: 60ch;
   --ratio: 1.5;
   --t-ratio: 1.2;
 
@@ -49,20 +48,6 @@
     @return var(--t#{$exponential});
   }
   @error "No such scale exist for exponential: #{$exponential}";
-}
-
-* {
-  max-width: var(--measure);
-}
-
-html,
-body,
-div,
-header,
-nav,
-main,
-footer {
-  max-width: none;
 }
 
 body {
