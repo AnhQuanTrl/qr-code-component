@@ -1,0 +1,39 @@
+@each $exponential in $exponentials {
+  .mg-s#{$exponential} {
+    margin: var(--s#{$exponential});
+  }
+
+  .pd-s#{$exponential} {
+    padding: var(--s#{$exponential});
+  }
+
+  .pd-block-s#{$exponential} {
+    padding-block: var(--s#{$exponential});
+  }
+
+  .pd-bottom-s#{$exponential} {
+    padding-bottom: var(--s#{$exponential});
+  }
+
+  .pd-inline-s#{$exponential} {
+    padding-inline: var(--s#{$exponential});
+  }
+}
+
+@each $key, $val in $colors {
+  .bg-#{$key} {
+    background-color: $val;
+  }
+
+  .clr-#{$key} {
+    color: $val;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.br-base {
+  border-radius: $border-radius-base;
+}

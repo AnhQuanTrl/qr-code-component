@@ -1,0 +1,84 @@
+@use "sass:list";
+
+:root {
+  --measure: 60ch;
+  --ratio: 1.5;
+  --t-ratio: 1.2;
+
+  /* 15px */
+  font-size: 93.75%;
+
+  @include respond-to("sm") {
+    --ratio: 1.25;
+
+    font-size: 87.5%;
+  }
+
+  /* Modular Scale */
+  @each $exponential in $exponentials {
+    @if $exponential == 0 {
+      --s#{$exponential}: 1rem;
+    } @else if $exponential < 0 {
+      --s#{$exponential}: calc(var(--s#{$exponential + 1}) / var(--ratio));
+    } @else {
+      --s#{$exponential}: calc(var(--s#{$exponential - 1}) * var(--ratio));
+    }
+  }
+
+  /* Typography scale */
+  @each $exponential in $exponentials {
+    @if $exponential == 0 {
+      --t#{$exponential}: 1rem;
+    } @else if $exponential < 0 {
+      --t#{$exponential}: calc(var(--t#{$exponential + 1}) / var(--t-ratio));
+    } @else {
+      --t#{$exponential}: calc(var(--t#{$exponential - 1}) * var(--t-ratio));
+    }
+  }
+}
+
+@function modular_scale($exponential) {
+  @if index($exponentials, $exponential) != null {
+    @return var(--s#{$exponential});
+  }
+  @error "No such scale exist for exponential: #{$exponential}";
+}
+
+@function typography_scale($exponential) {
+  @if index($exponentials, $exponential) != null {
+    @return var(--t#{$exponential});
+  }
+  @error "No such scale exist for exponential: #{$exponential}";
+}
+
+* {
+  max-width: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: $font-weight-base;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: map-get($colors, "neutral");
+}
+
+h1 {
+  font-size: #{typography_scale(2)};
+  line-height: 1.2;
+}

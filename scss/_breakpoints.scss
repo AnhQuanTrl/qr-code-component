@@ -1,0 +1,11 @@
+$breakpoints: (
+  "sm": (
+    max-width: 375px,
+  ),
+);
+
+@mixin respond-to($breakpoint) {
+  @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}

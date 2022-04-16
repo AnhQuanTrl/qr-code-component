@@ -6,7 +6,7 @@ function buildStyles() {
 }
 
 function watchTask() {
-  watch(["shinobi/**/*.scss"], buildStyles);
+  watch(["scss/**/*.scss"], buildStyles);
 }
 
 exports.default = series(buildStyles, watchTask);

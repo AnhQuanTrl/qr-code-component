@@ -1,0 +1,258 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --measure: 60ch;
+  --ratio: 1.5;
+  --t-ratio: 1.2;
+  /* 15px */
+  font-size: 93.75%;
+  /* Modular Scale */
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  /* Typography scale */
+  --t-1: calc(var(--t0) / var(--t-ratio));
+  --t0: 1rem;
+  --t1: calc(var(--t0) * var(--t-ratio));
+  --t2: calc(var(--t1) * var(--t-ratio));
+}
+@media (max-width: 375px) {
+  :root {
+    --ratio: 1.25;
+    font-size: 87.5%;
+  }
+}
+
+* {
+  max-width: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: hsl(212deg, 45%, 89%);
+}
+
+h1 {
+  font-size: var(--t2);
+  line-height: 1.2;
+}
+
+.mg-s-1 {
+  margin: var(--s-1);
+}
+
+.pd-s-1 {
+  padding: var(--s-1);
+}
+
+.pd-block-s-1 {
+  padding-block: var(--s-1);
+}
+
+.pd-bottom-s-1 {
+  padding-bottom: var(--s-1);
+}
+
+.pd-inline-s-1 {
+  padding-inline: var(--s-1);
+}
+
+.mg-s0 {
+  margin: var(--s0);
+}
+
+.pd-s0 {
+  padding: var(--s0);
+}
+
+.pd-block-s0 {
+  padding-block: var(--s0);
+}
+
+.pd-bottom-s0 {
+  padding-bottom: var(--s0);
+}
+
+.pd-inline-s0 {
+  padding-inline: var(--s0);
+}
+
+.mg-s1 {
+  margin: var(--s1);
+}
+
+.pd-s1 {
+  padding: var(--s1);
+}
+
+.pd-block-s1 {
+  padding-block: var(--s1);
+}
+
+.pd-bottom-s1 {
+  padding-bottom: var(--s1);
+}
+
+.pd-inline-s1 {
+  padding-inline: var(--s1);
+}
+
+.mg-s2 {
+  margin: var(--s2);
+}
+
+.pd-s2 {
+  padding: var(--s2);
+}
+
+.pd-block-s2 {
+  padding-block: var(--s2);
+}
+
+.pd-bottom-s2 {
+  padding-bottom: var(--s2);
+}
+
+.pd-inline-s2 {
+  padding-inline: var(--s2);
+}
+
+.bg-primary-dark {
+  background-color: hsl(218deg, 44%, 22%);
+}
+
+.clr-primary-dark {
+  color: hsl(218deg, 44%, 22%);
+}
+
+.bg-primary-light {
+  background-color: hsl(220deg, 15%, 55%);
+}
+
+.clr-primary-light {
+  color: hsl(220deg, 15%, 55%);
+}
+
+.bg-neutral {
+  background-color: hsl(212deg, 45%, 89%);
+}
+
+.clr-neutral {
+  color: hsl(212deg, 45%, 89%);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.clr-white {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.br-base {
+  border-radius: 7px;
+}
+
+.card {
+  --measure: 30ch;
+  display: grid;
+}
+.card .content {
+  box-sizing: content-box;
+}

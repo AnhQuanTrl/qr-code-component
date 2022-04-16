@@ -1,0 +1,13 @@
+$exponentials: -1, 0, 1, 2;
+
+$font-weight-base: 400;
+$font-weight-bold: 700;
+$border-radius-base: 7px;
+
+// color palette
+$colors: (
+  "primary-dark": hsl(218, 44%, 22%),
+  "primary-light": hsl(220, 15%, 55%),
+  "neutral": hsl(212, 45%, 89%),
+  "white": white,
+);
