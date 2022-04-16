@@ -1,5 +1,5 @@
 .card {
   display: grid;
-
+  box-shadow: 0 0.5rem 1rem #{make_shadow(map-get($colors, "neutral"), 0.1)};
   width: 20rem;
 }

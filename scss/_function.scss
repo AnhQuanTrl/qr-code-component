@@ -1,0 +1,6 @@
+@use "sass:color";
+@function make_shadow($color, $alpha) {
+  $color: desaturate($color, 40%);
+  $color: darken($color, 40%);
+  @return color.change($color, $alpha: $alpha);
+}
